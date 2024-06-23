@@ -1,0 +1,15 @@
+#include<stdio.h>
+    void pg(int n , char src , char helper ,char dest) {
+        if(n==1){
+            printf("transfer disk%d", n ,"from%c", src ,"to%c", dest );
+            return;
+        }
+        pg(n-1,src,dest,helper);
+        printf("transfer disk%d", n ,"from%c", src ,"to%c", dest );
+        pg(n-1,helper,src,dest);
+    }
+    int main(){
+        int n=2;
+        pg(n,'S','H','D');
+        return 0;
+    }
